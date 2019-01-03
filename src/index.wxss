@@ -1,0 +1,76 @@
+/* pages/modal/modal.wxss */
+.mask{
+  width: 100%;  
+  height: 100%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 99;
+  background:rgba(0, 0, 0, .5);  
+  overflow: hidden;  
+}
+.dialog{
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 130rpx;
+  background: #fff;
+  color: #888888;
+  overflow: hidden;
+  padding-top: 25rpx;
+  border-radius: 10rpx;
+}
+.dialog .title{
+  color: #000;
+  font-size: 36rpx;
+  font-weight: bold; 
+  padding-top: 20rpx;
+  text-align: center;
+}
+.dialog .content{
+  font-size: 15px;
+  text-align: center;
+  padding: 35rpx 58rpx;
+  border-bottom: 1rpx solid #D2D3D5;
+}
+.dialog .form{
+  font-size: 15px;
+  text-align: left;
+  padding: 35rpx 58rpx;
+  border-bottom: 1rpx solid #D2D3D5;
+}
+.diaBtn{
+  display: flex;
+}
+.diaBtn .btn{
+  color: #000;
+  width: 100%;
+  border-radius: 0;
+  background: #fff;
+}
+.diaBtn .btn:nth-child(2){
+  border-left: 1rpx solid #D2D3D5;
+}
+.diaBtn .cfirbtn{
+  color: #09BB07;
+}
+ .diaBtn .btn::after{
+  border: none;
+  outline: none; 
+} 
+.diaBtn .btnHover{
+  background: #EEE;
+}
+input {
+  text-align: left;
+  height: 1.5rem;
+  padding-left: 20rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #ccc;
+  margin: 12rpx 0 20rpx;
+}
+.form text{
+  color: #555;
+}
