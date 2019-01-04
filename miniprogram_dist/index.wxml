@@ -1,11 +1,11 @@
 <!--pages/modal/modal.wxml-->
-<view animation="{{animationData}}" class="mask" wx:if="{{showModalStatus}}">
+<view animation="{{animationData}}" class="mask" hidden="{{!showStatus}}" >
   <form class="dialog"  bindsubmit="confirmFunc">
     <view wx:if="{{title !== ''}}" class="title">{{title}}</view>
     <view wx:if="{{content !==  ''}}" class="content">
       <text>{{content}}</text> 
     </view>
-    <view wx:if="{{type === 'prompt'}}" class="form">
+    <view hidden="{{type !== 'prompt'}}" class="form">
       <block wx:for="{{items}}" wx:key="{{index}}">
         <text>{{item.label}}</text>
         <input name="{{item.name}}"></input>
