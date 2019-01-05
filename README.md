@@ -23,7 +23,7 @@ $ npm i wx-miniprogram-modal
 ```js
 {
   "usingComponents": {
-    "action-sheet": "wx-miniprogram-modal"
+    "mymodal": "wx-miniprogram-modal"
   }
 }
 ```
