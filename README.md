@@ -121,7 +121,7 @@ Page({
   }
 })
 ```
-​                                                                  ![自定义modal演示](https://ws1.sinaimg.cn/large/005z3BWwly1fyulcbtzcng306k0bndr2.gif)
+​                                                                  ![自定义modal演示](demo.gif)
 
 ## 参数
 | 属性 | 数据类型 | 说明 | 选项 | 默认值 |
