@@ -121,7 +121,7 @@ Page({
   }
 })
 ```
-​                                                                  ![自定义modal演示](demo.gif)
+![自定义modal演示](demo.gif)
 
 ## 参数
 | 属性 | 数据类型 | 说明 | 选项 | 默认值 |
@@ -139,24 +139,24 @@ Page({
 | :--: | :--: |
 | complete | modal完成时触发的事件，`e.detail.confirm`来判断是取消还是确定，`type='prompt'`时携带的数据为`e.detail.formData`; `type='getUserInfo'`时携带的数据为`e.detail.hasUserInfo`,`e.detail.userInfo`; `type='openSetting'`时携带的数据为`e.detail.authSetting`; 具体请看示例|
 ## 注意事项
-1. `type = 'prompt'`时，必须设置表单项属性 `formItems="{{items}}"`；
-2. 表单项属性 `formItems`格式如下：
-```js
-[{label: '请输入姓名', name: 'name'}, 
-{label: '请输入邮箱', name: 'email'}]
-```
-3. `type='share' `页面生命周期需声明`onShareAppMessage`,并且在内部加上以下代码，因为自定义组件内不能使用转发回调 所以在这关闭模态框，不写这个 模态框点击转发按钮后将不会自动关闭；
-```js
-if (res.from === 'button') {
-    if (res.target.dataset.type === 'modalShare') {
-      this.setData({
-        showModal: false
-      })
-    }
-  }
-```
-4. `type='getUserInfo'`时，按需求来设定授权modal初始显隐状态。
-建议：项目中先`wx.getSetting`查看用户是否已经授权，未授权showStatus初始设为true将主动弹出该弹框，若已授权showStatus初始设为false避免多次弹出；
+1. `type = 'prompt'` 时，必须设置表单项属性 `formItems="{{items}}"`；
+2. 表单项属性 `formItems` 格式如下：
+    ```js
+    [{label: '请输入姓名', name: 'name'}, 
+    {label: '请输入邮箱', name: 'email'}]
+    ```
+3. `type='share'` 页面生命周期需声明 `onShareAppMessage`,并且在内部加上以下代码，因为自定义组件内不能使用转发回调 所以在这关闭模态框，不写这个 模态框点击转发按钮后将不会自动关闭；
+    ```js
+    if (res.from === 'button') {
+        if (res.target.dataset.type === 'modalShare') {
+          this.setData({
+            showModal: false
+          })
+        }
+      }
+    ```
+4. `type='getUserInfo'` 时，按需求来设定授权modal初始显隐状态。
+建议：项目中先 `wx.getSetting` 查看用户是否已经授权，未授权showStatus初始设为true将主动弹出该弹框，若已授权showStatus初始设为false避免多次弹出；
 5. 每个type携带的数据见上文代码示例或下载以下完整示例。
 ## 示例Demo
 [微信小程序自定义组件使用示例整合](https://github.com/JaimeCheng/weapp-components)
