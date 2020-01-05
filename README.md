@@ -55,7 +55,8 @@ Page({
     title: '提示',
     content: '',
     confirmText: '好的',
-    items: [{ label: '请输入姓名', name: 'name' }]
+    items: [{ label: '请输入姓名', name: 'name' }],
+    reportSubmit: true
   },
 
   // 完成操作的回调
@@ -91,7 +92,10 @@ Page({
       // 提交表单
       if (this.data.type === 'prompt') {
         var formData = e.detail.formData
-        // eg. { name: 'Jaime'}
+        var formId = e.detail.formId
+        // eg.
+        // formData: {name: "Jaime"}
+        // formId: "the formId is a mock one"
       }
 
       // 打开设置页
@@ -134,10 +138,11 @@ Page({
 | title | String | 标题，不写或为空时则不显示title |  选填 | 无 |
 | content | String | modal的内容 |  选填 | — |
 | formItems | Array | `type='prompt'`时必填的表单项属性，格式: [{label: '输入框label', name: '键名'}, ...] |  选填 | [] |
+| reportSubmit | Boolean | type="prompt"时 是否返回 formId |  选填 | false |
 ## 触发事件
 | eventName | 说明 |
 | :--: | :--: |
-| complete | modal完成时触发的事件，`e.detail.confirm`来判断是取消还是确定，`type='prompt'`时携带的数据为`e.detail.formData`; `type='getUserInfo'`时携带的数据为`e.detail.hasUserInfo`,`e.detail.userInfo`; `type='openSetting'`时携带的数据为`e.detail.authSetting`; 具体请看示例|
+| complete | modal完成时触发的事件，`e.detail.confirm`来判断是取消还是确定，`type='prompt'`时携带的数据包括`e.detail.formData`和`e.detail.formId`; `type='getUserInfo'`时携带的数据为`e.detail.hasUserInfo`,`e.detail.userInfo`; `type='openSetting'`时携带的数据为`e.detail.authSetting`; 具体请看示例|
 ## 注意事项
 1. `type = 'prompt'` 时，必须设置表单项属性 `formItems="{{items}}"`；
 2. 表单项属性 `formItems` 格式如下：

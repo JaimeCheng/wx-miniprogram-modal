@@ -67,6 +67,12 @@ Component({
       }
     },
 
+    // type="prompt"时 是否返回 formId 
+    reportSubmit: {
+      type: Boolean,
+      value: false
+    },
+
     // 是否显示取消按钮(cancelButton)
     showCancel: {
       type: Boolean,
@@ -163,6 +169,9 @@ Component({
 
       if (this.data.type === 'prompt') {
         myEventDetail.formData = e.detail.value
+        if (this.data.reportSubmit) {
+          myEventDetail.formId = e.detail.formId
+        }
         this.triggerEvent('complete', myEventDetail)
       }
 

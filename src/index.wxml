@@ -1,33 +1,33 @@
-
-<view animation="{{animationData}}" class="mask" hidden="{{!showStatus}}" >
-  <form class="dialog"  bindsubmit="confirmFunc">
-    <view wx:if="{{title !== ''}}" class="title">{{title}}</view>
-    <view wx:if="{{content !==  ''}}" class="content">
+<!--pages/modal/modal.wxml-->
+<view animation="{{animationData}}" class="wx-modal_mask" hidden="{{!showStatus}}" >
+  <form class="wx-modal_dialog" report-submit="{{reportSubmit}}"  bindsubmit="confirmFunc">
+    <view wx:if="{{title !== ''}}" class="wx-modal_title">{{title}}</view>
+    <view wx:if="{{content !==  ''}}" class="wx-modal_content">
       <text>{{content}}</text> 
     </view>
-    <view hidden="{{type !== 'prompt'}}" class="form">
-      <block wx:for="{{items}}" wx:key="{{index}}">
-        <text>{{item.label}}</text>
-        <input name="{{item.name}}"></input>
+    <view hidden="{{type !== 'prompt'}}" class="wx-modal_prompt">
+      <block wx:for="{{items}}" wx:key="index">
+        <text class="wx-modal_label">{{item.label}}</text>
+        <input class="wx-modal_input" name="{{item.name}}"></input>
       </block>
     </view>
-    <view class="diaBtn">
+    <view class="wx-modal_diaBtn">
       <block wx:if="{{showCancel}}">
-        <button class="btn celbtn" hover-class="btnHover" bindtap="cancelFunc">{{cancelText}}</button>
+        <button class="wx-modal_btn wx-modal_celbtn" hover-class="wx-modal_btnHover" bindtap="cancelFunc">{{cancelText}}</button>
       </block>
       <block wx:if="{{type === 'getUserInfo'}}">
-        <button class="btn cfirbtn" hover-class="btnHover" open-type="getUserInfo" bindgetuserinfo="confirmFunc">{{confirmText}}</button>
+        <button class="wx-modal_btn wx-modal_cfirbtn" hover-class="wx-modal_btnHover" open-type="getUserInfo" bindgetuserinfo="confirmFunc">{{confirmText}}</button>
       </block>
       <block wx:if="{{type === 'prompt'}}">
-        <button class="btn cfirbtn" hover-class="btnHover" form-type="submit">{{confirmText}}</button>
+        <button class="wx-modal_btn wx-modal_cfirbtn" hover-class="wx-modal_btnHover" form-type="submit">{{confirmText}}</button>
       </block>
       <block wx:if="{{type === 'share'}}">
 
         <!-- data-type="modalShare"为了在使用组件的页面里区分转发按钮来自本模态框 -->
-        <button class="btn cfirbtn" hover-class="btnHover" data-type="modalShare" open-type="share">{{confirmText}}</button>
+        <button class="wx-modal_btn wx-modal_cfirbtn" hover-class="wx-modal_btnHover" data-type="modalShare" open-type="share">{{confirmText}}</button>
       </block>
        <block wx:if="{{type === '' || type === 'openSetting'}}">
-        <button class="btn cfirbtn" hover-class="btnHover" bindtap="confirmFunc">{{confirmText}}</button>
+        <button class="wx-modal_btn wx-modal_cfirbtn" hover-class="wx-modal_btnHover" bindtap="confirmFunc">{{confirmText}}</button>
       </block>
     </view>
   </form>

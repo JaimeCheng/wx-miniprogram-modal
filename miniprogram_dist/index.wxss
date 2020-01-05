@@ -1,5 +1,5 @@
 
-.mask{
+.wx-modal_mask{
   width: 100%;  
   height: 100%;  
   display: flex;
@@ -12,7 +12,7 @@
   background:rgba(0, 0, 0, .5);  
   overflow: hidden;  
 }
-.dialog{
+.wx-modal_dialog{
   width: 80%;
   max-width: 300px;
   margin-bottom: 130rpx;
@@ -22,48 +22,48 @@
   padding-top: 25rpx;
   border-radius: 10rpx;
 }
-.dialog .title{
+.wx-modal_dialog .wx-modal_title{
   color: #000;
   font-size: 36rpx;
   font-weight: bold; 
   padding-top: 20rpx;
   text-align: center;
 }
-.dialog .content{
+.wx-modal_dialog .wx-modal_content{
   font-size: 15px;
   text-align: center;
   padding: 35rpx 58rpx;
   border-bottom: 1rpx solid #D2D3D5;
 }
-.dialog .form{
+.wx-modal_dialog .wx-modal_prompt{
   font-size: 15px;
   text-align: left;
   padding: 35rpx 58rpx;
   border-bottom: 1rpx solid #D2D3D5;
 }
-.diaBtn{
+.wx-modal_diaBtn{
   display: flex;
 }
-.diaBtn .btn{
+.wx-modal_diaBtn .wx-modal_btn{
   color: #000;
   width: 100%;
   border-radius: 0;
   background: #fff;
 }
-.diaBtn .btn:nth-child(2){
+.wx-modal_diaBtn .wx-modal_btn:nth-child(2){
   border-left: 1rpx solid #D2D3D5;
 }
-.diaBtn .cfirbtn{
+.wx-modal_diaBtn .wx-modal_cfirbtn{
   color: #09BB07;
 }
- .diaBtn .btn::after{
+.wx-modal_diaBtn .wx-modal_btn::after{
   border: none;
   outline: none; 
 } 
-.diaBtn .btnHover{
+.wx-modal_diaBtn .wx-modal_btnHover{
   background: #EEE;
 }
-input {
+.wx-modal_input {
   text-align: left;
   height: 1.5rem;
   padding-left: 20rpx;
@@ -71,6 +71,6 @@ input {
   border: 1rpx solid #ccc;
   margin: 12rpx 0 20rpx;
 }
-.form text{
+.wx-modal_label{
   color: #555;
 }
