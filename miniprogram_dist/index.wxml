@@ -8,7 +8,7 @@
     <view hidden="{{type !== 'prompt'}}" class="wx-modal_prompt">
       <block wx:for="{{items}}" wx:key="index">
         <text class="wx-modal_label">{{item.label}}</text>
-        <input class="wx-modal_input" name="{{item.name}}"></input>
+        <input class="wx-modal_input" name="{{item.name}}" value="{{ promptVal }}"></input>
       </block>
     </view>
     <view class="wx-modal_diaBtn">

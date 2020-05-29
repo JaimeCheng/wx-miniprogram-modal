@@ -144,7 +144,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
     // 取消按钮响应事件
     cancelFunc: function () {
       this.setData({
@@ -173,6 +172,9 @@ Component({
           myEventDetail.formId = e.detail.formId
         }
         this.triggerEvent('complete', myEventDetail)
+        this.setData({
+          promptVal: ''
+        })
       }
 
       if (this.data.type === 'openSetting') {
