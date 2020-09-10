@@ -1,6 +1,6 @@
 {
   "name": "wx-miniprogram-modal",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "wechat miniprogram custom component modal",
   "main": "miniprogram_dist/index.js",
   "scripts": {
