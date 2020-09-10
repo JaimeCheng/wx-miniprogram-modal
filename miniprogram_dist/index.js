@@ -173,7 +173,7 @@ Component({
         }
         this.triggerEvent('complete', myEventDetail)
         this.setData({
-          promptVal: ''
+          items: this.data.formItems
         })
       }
 

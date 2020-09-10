@@ -137,7 +137,7 @@ Page({
 | cancelText | String | 取消按钮的文字 |  选填 | 取消 |
 | title | String | 标题，不写或为空时则不显示title |  选填 | 无 |
 | content | String | modal的内容 |  选填 | — |
-| formItems | Array | `type='prompt'`时必填的表单项属性，格式: [{label: '输入框label', name: '键名'}, ...] |  选填 | [] |
+| formItems | Array | `type='prompt'`时必填的表单项属性，格式: [{label: '输入框label', name: '键名', val: '初始值(可为空)'}, ...] |  选填 | [] |
 | reportSubmit | Boolean | type="prompt"时 是否返回 formId |  选填 | false |
 ## 触发事件
 | eventName | 说明 |
@@ -147,9 +147,10 @@ Page({
 1. `type = 'prompt'` 时，必须设置表单项属性 `formItems="{{items}}"`；
 2. 表单项属性 `formItems` 格式如下：
     ```js
-    [{label: '请输入姓名', name: 'name'}, 
-    {label: '请输入邮箱', name: 'email'}]
+    [{label: '请输入姓名', name: 'name', val: '初始值(可为空)'}, 
+    {label: '请输入邮箱', name: 'email'}, val: '']
     ```
+  提交后表单数据将重置为初始值
 3. `type='share'` 页面生命周期需声明 `onShareAppMessage`,并且在内部加上以下代码，因为自定义组件内不能使用转发回调 所以在这关闭模态框，不写这个 模态框点击转发按钮后将不会自动关闭；
     ```js
     if (res.from === 'button') {
